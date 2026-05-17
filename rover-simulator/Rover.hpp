@@ -5,13 +5,9 @@
 //  Created by Ryu Dae-ha on 5/17/26.
 //
 
-enum DIRECTIONS {
-    NS = 0,
-    NORTH,
-    SOUTH,
-    WEST,
-    EAST
-};
+#pragma once
+
+#include "Direction.hpp"
 
 struct POSITION {
     std::size_t row;
@@ -26,13 +22,13 @@ public:
     
     POSITION position() const { return {row, col}; }
     
-    void move(const int dir) {
+    void move(Direction dir) {
         switch (dir) {
-            case NORTH: row -= 1; break;
-            case SOUTH: row += 1; break;
-            case WEST:  col -= 1; break;
-            case EAST:  col += 1; break;
-            default:              break;
+            case Direction::North: row -= 1; break;
+            case Direction::South: row += 1; break;
+            case Direction::West:  col -= 1; break;
+            case Direction::East:  col += 1; break;
+            default:                         break;
         }
     }
     

@@ -1,5 +1,4 @@
-#ifndef MATRIX2D_HPP
-#define MATRIX2D_HPP
+#pragma once
 
 #include <vector>
 #include <stdexcept>
@@ -69,5 +68,3 @@ private:
         }
     }
 };
-
-#endif // MATRIX2D_HPP

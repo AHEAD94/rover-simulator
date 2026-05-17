@@ -10,6 +10,7 @@
 #include <opencv2/opencv.hpp>
 #include "Matrix2D.hpp"
 #include "Rover.hpp"
+#include "RoverController.hpp"
 
 int main(int argc, const char * argv[]) {
     Matrix2D mat({
@@ -24,6 +25,11 @@ int main(int argc, const char * argv[]) {
     });
     
     Rover rov(0, 0);
+    
+    RoverController controller(mat, rov);
+    controller.tryMove(Direction::West);
+    controller.tryMove(Direction::East);
+    controller.tryMove(Direction::South);
 
     std::cout << "Matrix (" << mat.rows() << "x" << mat.cols() << ")" << '\n';
     for (std::size_t r = 0; r < mat.rows(); ++r) {
@@ -96,4 +102,3 @@ int main(int argc, const char * argv[]) {
 
     return EXIT_SUCCESS;
 }
-
